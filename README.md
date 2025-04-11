@@ -1,7 +1,7 @@
 # IngSoftware
 Repositorio para la clase de Ing de Software.
 
-Este repositorio contiene los proyectos desarrollados durante el curso de Ingeniería de Software, con enfoque en patrones de diseño. Actualmente, se han implementado los patrones de diseño **Singleton** y **Factory**.
+Este repositorio contiene los proyectos desarrollados durante el curso de Ingeniería de Software, con enfoque en patrones de diseño. Actualmente, se han implementado los patrones de diseño **Singleton** y **Factory**. Ademas de incluir un ejercicio de 5 ejemplos a los cuales se les aplica una mejora de codigo implementando los principios SOLID. 
 
 ## Proyectos
 
@@ -32,11 +32,6 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 **Cómo usar**:
 1. Utiliza la clase `Factory` para crear productos según el tipo deseado.
 2. Los productos creados implementan la interfaz `Producto` y pueden ser utilizados de manera uniforme.
-
-## Requisitos
-
-- JDK 8 o superior.
-- IDE recomendado: IntelliJ IDEA, Eclipse o NetBeans.
 
 ### 3. **Mejoras en Código Java (5 Ejemplos)**
 
@@ -79,6 +74,11 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 **Cómo usar:**
 - Revisa los archivos `.java` de cada uno de los ejemplos. Cada uno contiene el código original con sus respectivos problemas y la versión refactorizada que resuelve esos problemas.
 - En cada ejemplo, también encontrarás archivos `.txt` con justificaciones detalladas que explican las decisiones tomadas y los principios aplicados.
+
+## Requisitos
+
+- JDK 8 o superior.
+- IDE recomendado: IntelliJ IDEA, Eclipse o NetBeans.
 
 ## Instalación
 
