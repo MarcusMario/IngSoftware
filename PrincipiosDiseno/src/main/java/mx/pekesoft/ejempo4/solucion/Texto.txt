@@ -1,0 +1,14 @@
+Justificación de la mejora del ejemplo 4:
+
+El código original tenía varios problemas que hacían que fuera más difícil de mantener y extender. El principal problema era que había repetición de lógica: los cálculos de impuestos y totales se realizaban en más de un método, lo que no es una buena práctica porque si hay que cambiar algo en la forma en que se calcula el total, tendríamos que hacerlo en varios lugares, lo que aumenta el riesgo de cometer errores.
+
+Además, la clase `InvoiceCalculator` tenía varias responsabilidades: no solo calculaba los totales, sino que también imprimía la información del usuario en consola. Esto violaba el principio de responsabilidad única (SRP), que dice que cada clase debe tener una única razón para cambiar.
+
+Lo que hice fue mejorar la estructura del código separando las responsabilidades de manera más clara:
+1. Centralicé el cálculo de impuestos en un único método (`computeTaxedTotal`) para evitar la duplicación de código.
+2. Creé una nueva clase llamada `DiscountCalculator` que extiende de `InvoiceCalculator`, de modo que pueda reutilizar la lógica de cálculo de impuestos y simplemente añadir la parte del descuento.
+3. La clase `UserDisplayService` ahora es la única encargada de mostrar el nombre del usuario y el total, lo que mejora la organización del código y hace que cada clase tenga un único propósito.
+
+Con estos cambios, el código es más fácil de entender, modificar y expandir. Si en el futuro necesitamos agregar más tipos de cálculos o cambiar la forma en que mostramos los resultados, podemos hacerlo sin afectar otras partes del código. Esto mejora la mantenibilidad y la extensibilidad del sistema.
+
+En resumen, ahora tenemos un código más limpio, organizado y fácil de extender sin causar problemas en otras áreas.

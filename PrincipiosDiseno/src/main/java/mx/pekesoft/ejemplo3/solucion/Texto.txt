@@ -1,0 +1,13 @@
+Justificación del ejemplo 3:
+
+El problema con el código original es que la clase RegistroActividad hacía de todo: mostraba mensajes por consola, escribía en un archivo de texto, validaba el nombre del usuario y además tenía el método main. Todo eso en una sola clase.
+
+Esto va en contra del principio de responsabilidad única (SRP), que básicamente dice que una clase debería tener una sola función específica. Si hace muchas cosas, se vuelve difícil de mantener o modificar después.
+
+Por eso decidí separar cada parte en su propia clase. Ahora:
+- RegistroActividad solo coordina el proceso.
+- EscritorArchivo se encarga de escribir en el archivo.
+- ValidadorUsuario se asegura de que el nombre del usuario sea válido.
+- Y el método main está aparte en una clase llamada Aplicacion.
+
+Así el código queda más limpio, más organizado y si en el futuro se necesita cambiar algo (por ejemplo, guardar en una base de datos en vez de un archivo), no hay que tocar todo el código, solo la clase que hace esa parte.

@@ -1,0 +1,13 @@
+Ejemplo 1: ProcesadorComplejo.java
+
+Problema:
+La clase original viola el Principio de Responsabilidad Única (SRP), ya que maneja múltiples responsabilidades como conversión de datos, transformación, cálculo de promedio y orquestación del proceso general.
+
+Solución:
+Se separaron las responsabilidades en clases independientes:
+- ConversorListaArreglo: convierte List<Double> a double[].
+- TransformadorDatos: aplica transformaciones a los datos.
+- CalculadorPromedio: calcula el promedio de los datos.
+- ProcesadorSimple: coordina todo el flujo de procesamiento.
+
+Esto mejora la claridad, mantenibilidad, escalabilidad y testeo del código.

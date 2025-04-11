@@ -1,0 +1,9 @@
+Justificación del ejemplo 2:
+
+En el código original se estaba rompiendo un principio importante de la programación orientada a objetos: el Principio de Sustitución de Liskov (LSP). Esto se nota porque la clase DocumentoSoloLectura hereda de Documento, pero cuando alguien intenta usarla y llama al método imprimir(), lanza una excepción diciendo que no se puede imprimir.
+
+Esto genera un problema, porque uno esperaría que si algo es un Documento, se debería poder usar como tal sin que el programa falle. Pero aquí no pasa eso, ya que el comportamiento cambia de forma inesperada.
+
+Para corregir esto, modifiqué el diseño de las clases. Ahora Documento tiene un método llamado puedeImprimir(), que devuelve true por defecto. La clase DocumentoSoloLectura lo sobreescribe para que devuelva false, y su método imprimir() ya no lanza una excepción, solo muestra un mensaje avisando que no se puede imprimir. Además, en el main del programa se verifica si el documento se puede imprimir antes de intentarlo.
+
+Con este cambio, el código se vuelve más predecible, más limpio, y respeta el comportamiento que uno esperaría al trabajar con herencia. Ya no hay errores en tiempo de ejecución ni excepciones que rompan la lógica del programa.
