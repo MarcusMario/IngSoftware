@@ -5,6 +5,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 
 ## Proyectos
 
+
 ### 1. **Singleton**
 
 **Descripción**: En este proyecto se implementó el patrón de diseño **Singleton**, que garantiza que una clase tenga una única instancia y proporcione un punto de acceso global a ella. Se desarrolló una solución para un juego que necesita gestionar configuraciones globales de manera uniforme en todas sus partes. El patrón asegura que todas las configuraciones sean consistentes y fácilmente modificables en tiempo de ejecución.
@@ -17,6 +18,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 **Cómo usar**:
 1. Accede a la instancia única de la clase `Configuracion` mediante su método estático.
 2. Modifica las configuraciones globales del juego según sea necesario.
+
 
 ### 2. **Factory**
 
@@ -32,6 +34,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 **Cómo usar**:
 1. Utiliza la clase `Factory` para crear productos según el tipo deseado.
 2. Los productos creados implementan la interfaz `Producto` y pueden ser utilizados de manera uniforme.
+
 
 ### 3. **Mejoras en Código Java (5 Ejemplos)**
 
@@ -74,6 +77,51 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 **Cómo usar:**
 - Revisa los archivos `.java` de cada uno de los ejemplos. Cada uno contiene el código original con sus respectivos problemas y la versión refactorizada que resuelve esos problemas.
 - En cada ejemplo, también encontrarás archivos `.txt` con justificaciones detalladas que explican las decisiones tomadas y los principios aplicados.
+
+
+### 4. **API REST con Spring Boot + MySQL (Inyección de Dependencias)**
+
+**Descripción**: Este proyecto consiste en una API REST desarrollada con Spring Boot, conectada a una base de datos MySQL 8 que corre en un contenedor Docker.  
+La gestión de la base de datos se realiza mediante DBeaver, y el proyecto implementa operaciones POST y GET para una tabla de automóviles.  
+Se aplica el patrón de diseño Inyección de Dependencias a través de la anotación `@Autowired`.
+
+---
+
+## Tecnologías utilizadas
+
+- Java 17  
+- Spring Boot  
+- Docker  
+- MySQL 8  
+- Hibernate (JPA)  
+- REST API  
+- Inyección de Dependencias (`@Autowired`)  
+- DBeaver
+
+---
+
+**Clases principales**:
+- `Automovil`: Entidad JPA que representa la tabla en la base de datos.
+- `AutomovilRepository`: Repositorio que extiende `JpaRepository` para realizar operaciones CRUD.
+- `AutomovilService`: Servicio donde se inyecta el repositorio con `@Autowired`.
+- `AutomovilController`: Controlador REST que maneja las peticiones HTTP.
+
+**Cómo usar**:
+1. Inicia el contenedor Docker con MySQL (ver sección "Configuración de conexión").
+2. Crea la base de datos `automoviles_db` en DBeaver.
+3. Ejecuta la aplicación desde tu IDE.
+4. Accede a los endpoints usando Postman o cualquier cliente HTTP.
+
+---
+
+## Configuración de conexión
+
+**Comando para iniciar el contenedor Docker con MySQL:**
+
+```bash
+docker run -p 3306:3306 --name is_mysql -e MYSQL_ROOT_PASSWORD=Root.1234 -d mysql:8
+
+---
 
 ## Requisitos
 
