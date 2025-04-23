@@ -117,12 +117,11 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 4. Accede a los endpoints usando Postman o cualquier cliente HTTP.
 
 
-#### Configuración de conexión
-
 **Comando para iniciar el contenedor Docker con MySQL:**
 
-bash
+```bash
 docker run -p 3306:3306 --name is_mysql -e MYSQL_ROOT_PASSWORD=Root.1234 -d mysql:8
+```
 
 ---
 
@@ -136,3 +135,4 @@ docker run -p 3306:3306 --name is_mysql -e MYSQL_ROOT_PASSWORD=Root.1234 -d mysq
 1. Clona el repositorio en tu máquina local:
    ```bash
    git clone https://github.com/MarcusMario/ingSoftware.git
+   ```
