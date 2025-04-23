@@ -19,6 +19,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 1. Accede a la instancia única de la clase `Configuracion` mediante su método estático.
 2. Modifica las configuraciones globales del juego según sea necesario.
 
+---
 
 ### 2. **Factory**
 
@@ -35,6 +36,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 1. Utiliza la clase `Factory` para crear productos según el tipo deseado.
 2. Los productos creados implementan la interfaz `Producto` y pueden ser utilizados de manera uniforme.
 
+---
 
 ### 3. **Mejoras en Código Java (5 Ejemplos)**
 
