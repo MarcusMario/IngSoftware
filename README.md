@@ -81,7 +81,6 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 - En cada ejemplo, también encontrarás archivos `.txt` con justificaciones detalladas que explican las decisiones tomadas y los principios aplicados.
 
 ---
----
 
 ### 4. **API REST con Spring Boot + MySQL (Inyección de Dependencias)**
 
@@ -91,7 +90,7 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 
 
 
-## Tecnologías utilizadas
+#### Tecnologías utilizadas
 
 - Java 17  
 - Spring Boot  
@@ -118,7 +117,7 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 4. Accede a los endpoints usando Postman o cualquier cliente HTTP.
 
 
-## Configuración de conexión
+#### Configuración de conexión
 
 **Comando para iniciar el contenedor Docker con MySQL:**
 
