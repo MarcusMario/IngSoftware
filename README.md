@@ -101,6 +101,7 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 ---
 
 **Clases principales**:
+
 - `Automovil`: Entidad JPA que representa la tabla en la base de datos.
 - `AutomovilRepository`: Repositorio que extiende `JpaRepository` para realizar operaciones CRUD.
 - `AutomovilService`: Servicio donde se inyecta el repositorio con `@Autowired`.
@@ -118,7 +119,7 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 
 **Comando para iniciar el contenedor Docker con MySQL:**
 
-```bash
+bash
 docker run -p 3306:3306 --name is_mysql -e MYSQL_ROOT_PASSWORD=Root.1234 -d mysql:8
 
 ---
