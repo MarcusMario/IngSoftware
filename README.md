@@ -80,6 +80,8 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 - Revisa los archivos `.java` de cada uno de los ejemplos. Cada uno contiene el código original con sus respectivos problemas y la versión refactorizada que resuelve esos problemas.
 - En cada ejemplo, también encontrarás archivos `.txt` con justificaciones detalladas que explican las decisiones tomadas y los principios aplicados.
 
+---
+---
 
 ### 4. **API REST con Spring Boot + MySQL (Inyección de Dependencias)**
 
@@ -87,7 +89,7 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 La gestión de la base de datos se realiza mediante DBeaver, y el proyecto implementa operaciones POST y GET para una tabla de automóviles.  
 Se aplica el patrón de diseño Inyección de Dependencias a través de la anotación `@Autowired`.
 
----
+
 
 ## Tecnologías utilizadas
 
@@ -100,7 +102,7 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 - Inyección de Dependencias (`@Autowired`)  
 - DBeaver
 
----
+
 
 **Clases principales**:
 
@@ -115,7 +117,6 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 3. Ejecuta la aplicación desde tu IDE.
 4. Accede a los endpoints usando Postman o cualquier cliente HTTP.
 
----
 
 ## Configuración de conexión
 
