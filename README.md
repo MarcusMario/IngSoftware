@@ -38,13 +38,16 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 
 ---
 
-### 3. **Mejoras en Código Java (5 Ejemplos)**
+### 3. **PrincipiosDisenio -- Mejoras en Código Java (5 Ejemplos)**
 
 **Descripción:** Este proyecto está compuesto por cinco ejemplos de código en Java, en los cuales se identifican diversos problemas de diseño y se proponen soluciones basadas en principios de diseño sólido. Los ejemplos abarcan una variedad de temas, desde la violación del principio de responsabilidad única hasta problemas de herencia y la falta de flexibilidad en el código. Cada ejemplo es seguido de una justificación detallada y una propuesta de mejora que sigue principios fundamentales de la ingeniería de software, como la modularidad, la reutilización de código, la legibilidad, y el acoplamiento bajo.
 
 En cada uno de estos ejemplos se aplica un enfoque diferente para mejorar la calidad del código y garantizar su mantenibilidad, escalabilidad y flexibilidad a largo plazo.
 
-**Ejemplos de código:**
+
+
+#### **Ejemplos de código:**
+
 1. **Ejemplo 1:**
    - **Descripción:** Se aborda un caso donde varias responsabilidades están mezcladas en una clase, violando el principio de responsabilidad única.
    - **Mejoras:** Se introduce la separación de responsabilidades mediante la creación de nuevas clases con roles bien definidos, y se utiliza la composición en lugar de la herencia donde sea necesario.
@@ -65,10 +68,14 @@ En cada uno de estos ejemplos se aplica un enfoque diferente para mejorar la cal
    - **Descripción:** Se implementa un sistema de alertas que depende directamente de un objeto específico para enviar las notificaciones (como un enviador de correos). Esto limita la flexibilidad y dificulta las pruebas y cambios en el futuro.
    - **Mejoras:** Se aplica el principio de inversión de dependencias, desacoplando la lógica de negocio de los detalles de implementación mediante interfaces. Así, es posible intercambiar el tipo de servicio de alerta (por ejemplo, enviando notificaciones por SMS en lugar de correo electrónico) sin modificar el código existente.
 
-**Objetivo del Proyecto:**
+
+
+#### **Objetivo del Proyecto:**
 El objetivo de este proyecto es demostrar cómo una refactorización adecuada de código puede mejorar la calidad del software y hacer que sea más mantenible a lo largo del tiempo. Además, se busca promover las mejores prácticas en la programación orientada a objetos, como el uso de principios SOLID, para construir sistemas que sean fácilmente extensibles, flexibles y que sigan los patrones de diseño adecuados.
 
-**Arquitectura y Diseño:**
+
+
+#### **Arquitectura y Diseño:**
 Cada uno de los ejemplos tiene su propia justificación de las decisiones de diseño y la refactorización. A lo largo de los ejemplos, se hace hincapié en el uso de principios como:
 - **Responsabilidad única (SRP):** Cada clase debe tener una sola responsabilidad y no hacer más de una cosa.
 - **Abierto/Cerrado (OCP):** El código debe estar abierto para extensión pero cerrado para modificación.
@@ -76,13 +83,15 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 - **Segregación de interfaces (ISP):** Las clases no deben depender de interfaces que no usan.
 - **Inversión de dependencias (DIP):** Los módulos de alto nivel no deben depender de módulos de bajo nivel, sino de abstracciones.
 
-**Cómo usar:**
+
+
+#### **Cómo usar:**
 - Revisa los archivos `.java` de cada uno de los ejemplos. Cada uno contiene el código original con sus respectivos problemas y la versión refactorizada que resuelve esos problemas.
 - En cada ejemplo, también encontrarás archivos `.txt` con justificaciones detalladas que explican las decisiones tomadas y los principios aplicados.
 
 ---
 
-### 4. **API REST con Spring Boot + MySQL (Inyección de Dependencias)**
+### 4. **autos-api -- API REST con Spring Boot + MySQL (Inyección de Dependencias)**
 
 **Descripción**: Este proyecto consiste en una API REST desarrollada con Spring Boot, conectada a una base de datos MySQL 8 que corre en un contenedor Docker.  
 La gestión de la base de datos se realiza mediante DBeaver, y el proyecto implementa operaciones POST y GET para una tabla de automóviles.  
@@ -110,6 +119,8 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 - `AutomovilService`: Servicio donde se inyecta el repositorio con `@Autowired`.
 - `AutomovilController`: Controlador REST que maneja las peticiones HTTP.
 
+
+
 **Cómo usar**:
 1. Inicia el contenedor Docker con MySQL (ver sección "Configuración de conexión").
 2. Crea la base de datos `automoviles_db` en DBeaver.
@@ -122,6 +133,93 @@ Se aplica el patrón de diseño Inyección de Dependencias a través de la anota
 ```bash
 docker run -p 3306:3306 --name is_mysql -e MYSQL_ROOT_PASSWORD=Root.1234 -d mysql:8
 ```
+
+---
+
+### 5. **API-REST-Computadoras -- API REST con Spring Boot + JPA + Validaciones**
+
+**Descripción**:  Este proyecto consiste en una API REST desarrollada con Spring Boot, que permite gestionar computadoras mediante operaciones CRUD (crear, leer, actualizar, eliminar).
+La aplicación utiliza una base de datos relacional (H2 o MySQL), el patrón de diseño Inyección de Dependencias con @Autowired, validaciones con Jakarta Validation y manejo centralizado de errores.
+
+El proyecto sigue una arquitectura por capas: Entidad, Repositorio, Servicio, Controlador y Manejador de Excepciones.
+
+
+
+#### ¿Para qué sirve este proyecto?
+
+Sirve para:
+
+-  Registrar computadoras con marca, modelo, precio y foto.
+-  Consultar una lista o una computadora específica.
+-  Editar total o parcialmente un registro.
+-  Eliminar una computadora (opcional).
+-  Validar datos obligatorios (como que la marca no esté vacía).
+-  Manejar errores de forma clara y controlada.
+
+
+
+#### Tecnologías utilizadas
+
+- Java 17  
+- Spring Boot  
+- Spring Data JPA (Hibernate)
+- MySQL 8  
+- Maven
+- REST API  
+- Inyección de Dependencias (`@Autowired`)  
+- DBeaver
+
+
+
+**Clases principales**:
+
+- `Computadora`: Entidad JPA que representa una computadora con atributos como marca, modelo, foto y precio.
+- `ComputadoraRepository`: Repositorio que extiende CrudRepository para realizar operaciones CRUD en la base de datos.
+- `ComputadoraService`: Interfaz de servicio que define la lógica de negocio (listar, crear, actualizar, eliminar).
+- `ComputadoraServiceImpl`: Implementación del servicio que interactúa con el repositorio.
+- `ComputadoraRestController`: Controlador REST que maneja las peticiones HTTP GET, POST, PUT, PATCH.
+- `ManejadorGlobalExcepciones`: Clase que captura errores comunes como validaciones y JSON mal formateado, devolviendo respuestas claras al cliente.
+- `ComputadoraapiApplication`: Punto de entrada de la aplicación Spring Boot.
+
+
+
+#### Estructura del proyecto
+
+```plaintext
+src/
+└── main/
+    └── java/
+        └── mx/unam/aragon/ico/is/computadoraapi/
+            ├── controllers/           # Controladores REST (API)
+            │   └── ComputadoraRestController.java
+            ├── entities/              # Modelo de datos (Entidad JPA)
+            │   └── Computadora.java
+            ├── exceptions/            # Manejo global de errores
+            │   └── ManejadorGlobalExcepciones.java
+            ├── repositories/          # Acceso a base de datos
+            │   └── ComputadoraRepository.java
+            ├── services/              # Lógica de negocio
+            │   └── interfaces/ComputadoraService.java
+            │   └── impl/ComputadoraServiceImpl.java
+            └── ComputadoraapiApplication.java  # Punto de entrada
+```
+
+#### Principales Endpoints 
+
+```plaintext
+| Método | URL                             | Descripción                                  |
+|--------|----------------------------------|----------------------------------------------|
+| GET    | `/api/v1/computadoras/`         | Lista todas las computadoras                 |
+| GET    | `/api/v1/computadoras/{clave}`  | Obtiene una computadora por clave (ID)       |
+| POST   | `/api/v1/computadoras/`         | Crea una computadora                         |
+| POST   | `/api/v1/computadoras/{id}`     | Devuelve error                               |
+| PATCH  | `/api/v1/computadoras/{clave}`  | Actualiza parcialmente una computadora       |
+| PUT    | `/api/v1/computadoras/{clave}`  | Reemplaza completamente una computadora      |
+| DELETE | *(comentado en código)*         | Elimina una computadora                      |
+   
+
+```
+
 
 ---
 
