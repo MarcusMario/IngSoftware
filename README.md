@@ -223,6 +223,74 @@ src/
 
 ---
 
+
+### 6. pythonHola -- Docker + Python — Script básico ejecutado en contenedor Docker
+
+**Descripción**: 
+
+Este proyecto demuestra cómo construir y ejecutar una imagen Docker que contiene un script de Python. El objetivo principal es entender los pasos para crear un contenedor basado en Ubuntu, instalar Python y ejecutar un archivo `.py` que imprime un mensaje en consola con el nombre del autor.
+
+Este ejercicio forma parte del curso de *Ingeniería de Software* y refuerza conceptos fundamentales de Docker como construcción de imágenes, uso de `Dockerfile`, instalación de paquetes y ejecución de comandos.
+
+
+
+
+#### ¿Para qué sirve este proyecto?
+
+**Sirve para:**
+
+- Comprender cómo se construye una imagen Docker desde cero.
+- Automatizar la instalación de dependencias dentro del contenedor.
+- Ejecutar scripts de Python dentro de un contenedor aislado.
+- Demostrar el funcionamiento de un programa que imprime información del desarrollador.
+
+
+
+
+#### Tecnologías utilizadas
+
+- Docker  
+- Ubuntu (imagen base)  
+- Python 3  
+- Terminal Bash (Linux)  
+
+
+
+
+#### Archivos principales
+
+- `Dockerfile`: Archivo de configuración que define la imagen y los pasos necesarios para ejecutar el script.
+- `hola.py`: Script en Python que imprime un mensaje de saludo y el nombre completo del desarrollador.
+
+
+#### Pasos realizados en terminal
+
+```plaintext
+
+# 1. Crear el directorio y entrar en él
+mkdir pythonHola
+cd pythonHola
+
+# 2. Crear archivo Python
+nano hola.py
+
+# 3. Crear Dockerfile
+nano Dockerfile
+
+# 4. Construir la imagen con nombre 'tarea_is'
+sudo docker build -t tarea_is .
+
+# 5. Verificar imágenes creadas
+sudo docker image ls
+
+# 6. Ejecutar el contenedor
+sudo docker run tarea_is
+
+
+```
+
+---
+
 ## Requisitos
 
 - JDK 8 o superior.
