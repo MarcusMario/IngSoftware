@@ -236,8 +236,6 @@ Este proyecto demuestra cómo construir y ejecutar una imagen Docker que contien
 Este ejercicio forma parte del curso de *Ingeniería de Software* y refuerza conceptos fundamentales de Docker como construcción de imágenes, uso de `Dockerfile`, instalación de paquetes y ejecución de comandos.
 
 
-
-
 #### ¿Para qué sirve este proyecto?
 
 **Sirve para:**
@@ -291,6 +289,121 @@ sudo docker run tarea_is
 
 
 ```
+
+---
+
+
+### 7. websimple -- Spring MVC con Imagen Docker (Amazon Corretto)
+
+
+**Descripción**: 
+
+Este proyecto consiste en una aplicación web simple desarrollada con **Spring Boot MVC**, utilizando **Thymeleaf** como motor de plantillas, y empaquetada en un **contenedor Docker** basado en la imagen **Amazon Corretto 17 Alpine**.  
+
+La aplicación muestra un mensaje de bienvenida personalizado, incluyendo el nombre de un estudiante y un objeto tipo `Perro` que se envía desde el controlador al archivo HTML.
+
+El objetivo principal fue replicar una aplicación funcional utilizando Spring Boot con el patrón Modelo-Vista-Controlador (MVC). Para la vista, se empleó el motor de plantillas Thymeleaf. La funcionalidad principal consiste en desplegar una página web que muestre un saludo personalizado, incluyendo el nombre del alumno y los datos de un objeto de tipo Perro, instanciado en el controlador y enviado al frontend a través del modelo.
+
+La estructura del proyecto contiene una clase modelo llamada `Perro`, la cual posee atributos básicos como nombre y raza. Se diseñó un controlador principal que maneja las peticiones hacia la raíz del sitio (`/`), y se encarga de generar una instancia de `Perro`, asignarla al modelo y redirigir la vista al archivo `index.html`.
+
+Dentro del archivo HTML ubicado en la carpeta `templates`, se incluye un saludo general, el nombre del alumno, y una línea que saluda dinámicamente al nombre del perro utilizando expresiones Thymeleaf. Esto demuestra el paso de datos desde el backend al frontend de forma dinámica.
+
+El proyecto fue empaquetado utilizando Maven y posteriormente dockerizado. Se creó un archivo `Dockerfile` que utiliza la imagen `amazoncorretto:17-alpine3.17-jdk` como base. En este contenedor se copia el archivo `.jar` generado por Maven, se expone el puerto 8080 y se ejecuta la aplicación con el comando `java -jar`.
+
+Para ejecutar el proyecto, primero se debe compilar con Maven mediante el comando `./mvnw clean package`. Una vez generado el archivo `websimple-0.0.1-SNAPSHOT.jar`, se construye la imagen con Docker usando `sudo docker build -t websimple .` y finalmente se ejecuta con `sudo docker run -p 8080:8080 websimple`. Esto permitirá acceder a la aplicación desde el navegador en `http://localhost:8080`.
+
+Al acceder, el navegador mostrará un saludo general dirigido al grupo IS L, M y V, el nombre del desarrollador y una línea como “Hola, Fido!”, demostrando que la integración entre Spring Boot, Thymeleaf y Docker funciona correctamente.
+
+Este proyecto cumple con todos los requisitos establecidos: la correcta implementación de Spring Boot MVC, uso adecuado de Thymeleaf para vistas dinámicas, correcta configuración y ejecución en contenedor Docker, utilización de una imagen oficial y ligera como Amazon Corretto, y visibilidad del nombre en la interfaz final. También representa un ejemplo básico pero funcional de cómo construir aplicaciones modernas, empaquetables y portables mediante contenedores, ideal para entornos de desarrollo profesional.
+
+
+
+
+
+#### Dependecias 
+
+- Java 17 (Amazon Corretto)
+- Spring Boot 3.4.5
+- Thymeleaf
+- Maven
+- Docker
+
+
+
+
+#### Estructura del proyecto
+
+```bash
+
+websimple/
+├── Dockerfile
+├── pom.xml
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── mx/unam/aragon/ico/is/websimple/
+│       │       ├── WebsimpleApplication.java
+│       │       ├── modelo/Perro.java
+│       │       └── controladores/ControladorPrincipal.java
+│       └── resources/
+│           └── templates/index.html
+
+```
+
+
+####  ¿Qué se realizó?
+
+1. **Modelo Perro:**
+   - **Descripción:** Se creó una clase con los atributos nombre y raza.
+
+2. **Controlador Principal:**
+   - **Descripción:** Se generó un endpoint / con Spring MVC que instancia un objeto Perro y lo envía al template HTML a través del modelo.
+
+3. **Vista con Thymeleaf (index.html):**
+   - **Descripción:** La plantilla muestra:
+
+      - Un título de bienvenida.
+
+      - El nombre.
+
+      - Un mensaje dinámico como: “Hola, Fido!”
+   
+4. **Archivo Dockerfile:**
+   - **Descripción:** contenido del Dockerfile.
+     
+      - Se utiliza Amazon Corretto 17 Alpine como base.
+
+      - Se copia el .jar generado con Maven al contenedor.
+
+      - Se expone el puerto 8080.
+
+      - Se define el CMD para ejecutar la aplicación.
+
+   
+
+#### Comandos para ejecutar el contenedor Docker
+
+```plaintext
+
+# 1. Compilar la aplicación con Maven
+
+./mvnw clean package
+
+Hay que asegurarse de que el archivo .jar esté ubicado en target/websimple-0.0.1-SNAPSHOT.jar.
+
+
+# 2. Construir la imagen Docker
+
+sudo docker build -t websimple .
+
+
+# 3. Ejecutar el contenedor
+
+sudo docker run -p 8080:8080 websimple
+
+
+```
+
 
 ---
 
