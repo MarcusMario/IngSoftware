@@ -7,7 +7,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 
 ## Proyectos
 
-----
+---
 
 ### 1. **Singleton**
 
