@@ -1,8 +1,6 @@
 # IngSoftware
 ---- 
 
-Repositorio para la clase de Ing de Software.
-
 Este repositorio contiene los proyectos desarrollados durante el curso de Ingeniería de Software, con enfoque en patrones de diseño. Actualmente, se han implementado los patrones de diseño **Singleton** y **Factory**. Ademas de incluir un ejercicio de 5 ejemplos a los cuales se les aplica una mejora de codigo implementando los principios SOLID y entre otros temas y ejercicios a desarrollar. 
 
 ## Proyectos
