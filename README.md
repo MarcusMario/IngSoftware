@@ -31,7 +31,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
   Proyecto web simple. 
 
 
----
+
 
 ## Cómo usar este repositorio
 
@@ -39,7 +39,7 @@ Cada carpeta contiene un proyecto independiente con su propia documentación y a
 
 Si tienes dudas sobre algún proyecto específico, revisa el README dentro de esa carpeta (si está disponible).
 
----
+
 
 
 # Proyectos
@@ -511,41 +511,30 @@ Base URL: `http://localhost:8081/api/v1/plantas`
    ```bash
    mvn clean
 
-
-1. **Construir el proyecto y generar el JAR**
+2. **Construir el proyecto y generar el JAR**
    ```bash
    mvn package
 
-
-1. **Ejecutar localmente para verificar que Spring Boot inicia bien y sin errores**
+3. **Ejecutar localmente para verificar que Spring Boot inicia bien y sin errores**
    ```bash
    mvn spring-boot:run
 
-
-
-1. **Construir la imagen Docker de la aplicación (desde la raíz del proyecto)**
+4. **Construir la imagen Docker de la aplicación (desde la raíz del proyecto)**
 
    ```bash
    docker build -t plantasapi .
    
-
-2. **Levantar doccker compose**
+5. **Levantar doccker compose**
    ```bash
    docker compose up -d 
 
-
-1. **Verificar que los contenedores estén corriendo**
+6. **Verificar que los contenedores estén corriendo**
     ```bash
    docker ps
 
-
-3. **Detener y eliminar los contenedores**
+7. **Detener y eliminar los contenedores**
    ```bash
-
    docker compose down
-
-
-
 
 ---
 
