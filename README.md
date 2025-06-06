@@ -402,6 +402,111 @@ sudo docker run -p 8080:8080 websimple
 
 ```
 
+---
+
+### 8. ProyectoFinal -- API REST con Spring Boot y Entorno Docker Multicontenedor
+
+**Descripción**: 
+
+El proyecto API REST Plantas es una aplicación backend desarrollada con Spring Boot, que ofrece un servicio RESTful para la gestión de información sobre plantas. Este proyecto forma parte de un ejercicio final individual para la asignatura de Desarrollo de API REST, cuyo objetivo es consolidar conocimientos sobre la creación de servicios web robustos, escalables y mantenibles.
+
+La API permite almacenar, consultar, modificar y eliminar datos de una base de datos relacional MySQL sobre un conjunto de plantas, abarcando los principales métodos HTTP del protocolo REST (GET, POST, PUT, PATCH, DELETE). Para garantizar la calidad y seguridad de los datos, se implementan validaciones estrictas sobre los campos de entrada utilizando Jakarta Validation, y se maneja de forma centralizada el control de errores mediante un sistema global de excepciones con mensajes claros y códigos HTTP adecuados.
+
+El proyecto está completamente contenerizado utilizando Docker Compose, facilitando su despliegue y asegurando un entorno reproducible y portable que incluye tanto la aplicación como la base de datos. Esto permite levantar el sistema de manera rápida en cualquier entorno compatible con Docker, lo que es fundamental para pruebas, despliegues y escalabilidad.
+
+Con esta API, se cubren aspectos esenciales en el desarrollo moderno de aplicaciones backend, tales como la arquitectura RESTful, persistencia con JPA/Hibernate, validación y manejo de errores, además del despliegue con contenedores. Este proyecto también representa una base sólida para extender funcionalidades en el futuro, como autenticación, autorización, o integración con frontends.
+
+En resumen, este proyecto API REST Plantas es un ejemplo completo y funcional de un servicio web backend profesional, que combina buenas prácticas en desarrollo, seguridad, y despliegue, orientado a la gestión eficiente de datos de plantas en un entorno controlado.
+
+
+
+#### Características
+
+- CRUD completo: Crear, Leer, Actualizar (completo y parcial), Eliminar.
+- Validaciones de campos con `Jakarta Validation`.
+- Manejo global de excepciones.
+- Respuestas con códigos de estado HTTP apropiados.
+- Persistencia con base de datos MySQL.
+- Contenedores orquestados con Docker Compose.
+
+
+#### Tecnologias
+
+- Java 17 (o la versión que uses)
+- Spring Boot
+- Spring Data JPA
+- MySQL 8
+- Docker y Docker Compose
+- Jakarta Validation API
+
+
+
+#### Modelo de datos
+
+`Planta`
+| Campo        | Tipo      | Validaciones                               |
+|--------------|-----------|--------------------------------------------|
+| clave        | int       | Generado automáticamente                   |
+| nombre       | String    | `@NotBlank`, `@NotNull`                    |
+| tipo         | String    | `@NotBlank`, `@NotNull`                    |
+| descripcion  | String    | `@NotBlank`, `@NotNull`                    |
+| foto         | String    | Opcional, con valor por defecto            |
+
+
+#### Endpoints disponibles
+Base URL: `http://localhost:8081/api/v1/plantas`
+
+| Método HTTP | Ruta                         | Descripción                      |
+|-------------|------------------------------|----------------------------------|
+| GET         | `/plantas`                   | Obtener todas las plantas        |
+| GET         | `/plantas/{id}`              | Obtener planta por ID            |
+| POST        | `/plantas`                   | Crear una nueva planta           |
+| PUT         | `/plantas/{id}`              | Actualizar completamente         |
+| PATCH       | `/plantas/{id}`              | Actualizar parcialmente          |
+| DELETE      | `/plantas/{id}`              | Eliminar por ID                  |
+
+
+#### Despliegue en Docker
+
+1. **Limpiar el proyecto para eliminar compilaciones anteriores**
+   ```bash
+   mvn clean
+
+
+1. **Construir el proyecto y generar el JAR**
+   ```bash
+   mvn package
+
+
+1. **Ejecutar localmente para verificar que Spring Boot inicia bien y sin errores**
+   ```bash
+   mvn spring-boot:run
+
+
+
+1. **Construir la imagen Docker de la aplicación (desde la raíz del proyecto)**
+
+   ```bash
+   docker build -t plantasapi .
+   
+
+2. **Levantar doccker compose**
+   ```bash
+   docker compose up -d 
+
+
+1. **Verificar que los contenedores estén corriendo**
+    ```bash
+   docker ps
+
+
+3. **Detener y eliminar los contenedores**
+   ```bash
+
+   docker compose down
+
+
+
 
 ---
 
