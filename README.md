@@ -3,11 +3,50 @@
 
 Este repositorio contiene los proyectos desarrollados durante el curso de Ingeniería de Software, con enfoque en patrones de diseño. Actualmente, se han implementado los patrones de diseño **Singleton** y **Factory**. Ademas de incluir un ejercicio de 5 ejemplos a los cuales se les aplica una mejora de codigo implementando los principios SOLID y entre otros temas y ejercicios a desarrollar. 
 
-## Proyectos
+
+## Directorio de proyectos
+
+- [API-REST-Computadoras](./API-REST-Computadoras/)  
+  Proyecto de API REST enfocado en computadoras. 
+
+- [Factory](./Factory/)  
+  Implementación del patrón de diseño Factory. 
+
+- [PrincipiosDiseno](./PrincipiosDiseno/)  
+  Proyectos y ejemplos sobre principios de diseño de software. 
+
+- [ProyectoFinal](./ProyectoFinal/)  
+  Proyecto final reciente. 
+
+- [Singleton](./Singleton/)  
+  Ejemplo del patrón Singleton.
+  
+- [autos-api](./autos-api/)  
+  API REST para la gestión de autos. 
+
+- [pythonHola](./pythonHola/)  
+  Proyecto o scripts en Python. 
+
+- [websimple](./websimple/)  
+  Proyecto web simple. 
+
 
 ---
 
-### 1. **Singleton**
+## Cómo usar este repositorio
+
+Cada carpeta contiene un proyecto independiente con su propia documentación y archivos fuente. Puedes explorar cada uno haciendo clic en los enlaces o navegando dentro de la carpeta correspondiente.
+
+Si tienes dudas sobre algún proyecto específico, revisa el README dentro de esa carpeta (si está disponible).
+
+---
+
+
+# Proyectos
+
+---
+
+## 1. **Singleton**
 
 **Descripción**: En este proyecto se implementó el patrón de diseño **Singleton**, que garantiza que una clase tenga una única instancia y proporcione un punto de acceso global a ella. Se desarrolló una solución para un juego que necesita gestionar configuraciones globales de manera uniforme en todas sus partes. El patrón asegura que todas las configuraciones sean consistentes y fácilmente modificables en tiempo de ejecución.
 
@@ -22,7 +61,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 
 ---
 
-### 2. **Factory**
+## 2. **Factory**
 
 **Descripción**: En este proyecto se implementó el patrón de diseño **Factory** para crear diferentes tipos de productos (libros, revistas y periódicos) sin necesidad de especificar la clase concreta que debe ser instanciada. El patrón Factory se utilizó para centralizar la creación de estos productos y facilitar la extensión del sistema en el futuro.
 
@@ -39,7 +78,7 @@ Este repositorio contiene los proyectos desarrollados durante el curso de Ingeni
 
 ---
 
-### 3. **PrincipiosDisenio -- Mejoras en Código Java (5 Ejemplos)**
+## 3. **PrincipiosDisenio -- Mejoras en Código Java (5 Ejemplos)**
 
 **Descripción:** Este proyecto está compuesto por cinco ejemplos de código en Java, en los cuales se identifican diversos problemas de diseño y se proponen soluciones basadas en principios de diseño sólido. Los ejemplos abarcan una variedad de temas, desde la violación del principio de responsabilidad única hasta problemas de herencia y la falta de flexibilidad en el código. Cada ejemplo es seguido de una justificación detallada y una propuesta de mejora que sigue principios fundamentales de la ingeniería de software, como la modularidad, la reutilización de código, la legibilidad, y el acoplamiento bajo.
 
@@ -92,7 +131,7 @@ Cada uno de los ejemplos tiene su propia justificación de las decisiones de dis
 
 ---
 
-### 4. **autos-api -- API REST con Spring Boot + MySQL (Inyección de Dependencias)**
+## 4. **autos-api -- API REST con Spring Boot + MySQL (Inyección de Dependencias)**
 
 **Descripción**: Este proyecto consiste en una API REST desarrollada con Spring Boot, conectada a una base de datos MySQL 8 que corre en un contenedor Docker.  
 La gestión de la base de datos se realiza mediante DBeaver, y el proyecto implementa operaciones POST y GET para una tabla de automóviles.  
@@ -137,7 +176,7 @@ docker run -p 3306:3306 --name is_mysql -e MYSQL_ROOT_PASSWORD=Root.1234 -d mysq
 
 ---
 
-### 5. **API-REST-Computadoras -- API REST con Spring Boot + JPA + Validaciones**
+## 5. **API-REST-Computadoras -- API REST con Spring Boot + JPA + Validaciones**
 
 **Descripción**:  Este proyecto consiste en una API REST desarrollada con Spring Boot, que permite gestionar computadoras mediante operaciones CRUD (crear, leer, actualizar, eliminar).
 La aplicación utiliza una base de datos relacional (H2 o MySQL), el patrón de diseño Inyección de Dependencias con @Autowired, validaciones con Jakarta Validation y manejo centralizado de errores.
@@ -225,7 +264,7 @@ src/
 ---
 
 
-### 6. pythonHola -- Docker + Python — Script básico ejecutado en contenedor Docker
+## 6. pythonHola -- Docker + Python — Script básico ejecutado en contenedor Docker
 
 **Descripción**: 
 
@@ -291,7 +330,7 @@ sudo docker run tarea_is
 ---
 
 
-### 7. websimple -- Spring MVC con Imagen Docker (Amazon Corretto)
+## 7. websimple -- Spring MVC con Imagen Docker (Amazon Corretto)
 
 
 **Descripción**: 
@@ -404,7 +443,7 @@ sudo docker run -p 8080:8080 websimple
 
 ---
 
-### 8. ProyectoFinal -- API REST con Spring Boot y Entorno Docker Multicontenedor
+## 8. ProyectoFinal -- API REST con Spring Boot y Entorno Docker Multicontenedor
 
 **Descripción**: 
 
