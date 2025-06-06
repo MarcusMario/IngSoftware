@@ -1,0 +1,24 @@
+services:
+    mysql:
+        image: mysql:latest
+        container_name: ismysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_USER: userdb
+            MYSQL_PASSWORD: 123456
+            MYSQL_DATABASE: isdblmv
+        ports:
+            - "3306:3306"
+
+    plantas-api:
+        build: ./plantasapi
+        container_name: plantas-api
+        depends_on:
+            - "mysql"
+        environment:  
+            SPRING_DATASOURCE_URL: jdbc:mysql://ismysql:3306/isdblmv
+            SPRING_DATASOURCE_USERNAME: root
+            SPRING_DATASOURCE_PASSWORD: 123456
+        ports:
+            - "8081:8080"
